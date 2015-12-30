@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
         self.window = UIWindow(frame: ScreenBounds)
         
-        self.window?.rootViewController = DCMainPage()
+        self.window?.rootViewController = DCBaseController()
         
         self.window?.makeKeyAndVisible()
         
