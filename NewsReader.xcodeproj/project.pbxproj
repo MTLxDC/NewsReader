@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		76DED7FE8A1C03C516931568 /* Pods_NewsReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C333472C3C4C97B1C9AB3D /* Pods_NewsReader.framework */; };
-		8475338B1C33CBC700FE5758 /* DCBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847533881C33CBC700FE5758 /* DCBaseController.swift */; settings = {ASSET_TAGS = (); }; };
+		845FB8581C341FD900BE837B /* DCUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FB8571C341FD900BE837B /* DCUserInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		845FB85B1C34217800BE837B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FB85A1C34217800BE837B /* String+extension.swift */; settings = {ASSET_TAGS = (); }; };
+		845FB8611C3434F400BE837B /* DCPicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845FB85E1C3434F400BE837B /* DCPicScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		845FB8621C3434F400BE837B /* DCWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 845FB8601C3434F400BE837B /* DCWebImageManager.m */; settings = {ASSET_TAGS = (); }; };
+		845FB8641C34359D00BE837B /* DCNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FB8631C34359D00BE837B /* DCNetWorkTool.swift */; settings = {ASSET_TAGS = (); }; };
+		84616EAD1C3686CC00CB38DD /* DCSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84616EAC1C3686CC00CB38DD /* DCSetting.swift */; settings = {ASSET_TAGS = (); }; };
 		8475338D1C33DDDD00FE5758 /* DCTouTiao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475338C1C33DDDD00FE5758 /* DCTouTiao.swift */; settings = {ASSET_TAGS = (); }; };
 		8475338F1C33E80100FE5758 /* DCDisplayPicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475338E1C33E80100FE5758 /* DCDisplayPicInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		847FA46D1C3641BE00095A6D /* DCBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA46C1C3641BE00095A6D /* DCBaseController.swift */; settings = {ASSET_TAGS = (); }; };
+		847FA46F1C36498000095A6D /* DCMyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA46E1C36498000095A6D /* DCMyDataManager.swift */; settings = {ASSET_TAGS = (); }; };
+		847FA4721C3660E100095A6D /* DCBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA4711C3660E100095A6D /* DCBaseCell.swift */; settings = {ASSET_TAGS = (); }; };
 		848082E31C21309200EEC8E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848082E21C21309200EEC8E6 /* AppDelegate.swift */; };
 		848082FE1C21346900EEC8E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848082FD1C21346900EEC8E6 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		848083021C2134E900EEC8E6 /* ScreenSettingswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848083011C2134E900EEC8E6 /* ScreenSettingswift.swift */; settings = {ASSET_TAGS = (); }; };
+		848083021C2134E900EEC8E6 /* DCDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848083011C2134E900EEC8E6 /* DCDeviceInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		84C67B051C3675D600957C90 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C67B041C3675D600957C90 /* UILabel+extension.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +30,26 @@
 		34AB01CE0B274EC1F0C39931 /* Pods-NewsReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsReader/Pods-NewsReader.debug.xcconfig"; sourceTree = "<group>"; };
 		53C333472C3C4C97B1C9AB3D /* Pods_NewsReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C26DB1B08AAC8CAA2B7B429 /* Pods-NewsReader.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsReader.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-NewsReader/Pods-NewsReader.appstore.xcconfig"; sourceTree = "<group>"; };
-		847533881C33CBC700FE5758 /* DCBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseController.swift; sourceTree = "<group>"; };
+		845FB8571C341FD900BE837B /* DCUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCUserInfo.swift; sourceTree = "<group>"; };
+		845FB85A1C34217800BE837B /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		845FB85D1C3434F400BE837B /* DCPicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPicScrollView.h; sourceTree = "<group>"; };
+		845FB85E1C3434F400BE837B /* DCPicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPicScrollView.m; sourceTree = "<group>"; };
+		845FB85F1C3434F400BE837B /* DCWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCWebImageManager.h; sourceTree = "<group>"; };
+		845FB8601C3434F400BE837B /* DCWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCWebImageManager.m; sourceTree = "<group>"; };
+		845FB8631C34359D00BE837B /* DCNetWorkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCNetWorkTool.swift; sourceTree = "<group>"; };
+		845FB86D1C343F1F00BE837B /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
+		84616EAC1C3686CC00CB38DD /* DCSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCSetting.swift; sourceTree = "<group>"; };
 		8475338C1C33DDDD00FE5758 /* DCTouTiao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCTouTiao.swift; sourceTree = "<group>"; };
 		8475338E1C33E80100FE5758 /* DCDisplayPicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCDisplayPicInfo.swift; sourceTree = "<group>"; };
+		847FA46C1C3641BE00095A6D /* DCBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseController.swift; sourceTree = "<group>"; };
+		847FA46E1C36498000095A6D /* DCMyDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCMyDataManager.swift; sourceTree = "<group>"; };
+		847FA4711C3660E100095A6D /* DCBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCBaseCell.swift; sourceTree = "<group>"; };
 		848082DF1C21309200EEC8E6 /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848082E21C21309200EEC8E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848082EE1C21309200EEC8E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848082FD1C21346900EEC8E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		848083011C2134E900EEC8E6 /* ScreenSettingswift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSettingswift.swift; sourceTree = "<group>"; };
+		848083011C2134E900EEC8E6 /* DCDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCDeviceInfo.swift; sourceTree = "<group>"; };
+		84C67B041C3675D600957C90 /* UILabel+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		A03660B7A27F10A57C0137DC /* Pods-NewsReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsReader/Pods-NewsReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +76,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		845FB8591C34214700BE837B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				845FB85A1C34217800BE837B /* String+extension.swift */,
+				84C67B041C3675D600957C90 /* UILabel+extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		845FB85C1C3434F400BE837B /* DCPicscrollView */ = {
+			isa = PBXGroup;
+			children = (
+				845FB86D1C343F1F00BE837B /* Objective-CBridgingHeader.h */,
+				845FB85D1C3434F400BE837B /* DCPicScrollView.h */,
+				845FB85E1C3434F400BE837B /* DCPicScrollView.m */,
+				845FB85F1C3434F400BE837B /* DCWebImageManager.h */,
+				845FB8601C3434F400BE837B /* DCWebImageManager.m */,
+			);
+			name = DCPicscrollView;
+			path = NewsReader/Utility/DCPicscrollView;
+			sourceTree = "<group>";
+		};
 		847533841C33CBB700FE5758 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,34 +117,36 @@
 			isa = PBXGroup;
 			children = (
 				847533891C33CBC700FE5758 /* Model */,
-				8475338A1C33CBC700FE5758 /* View */,
-				847533871C33CBC700FE5758 /* Controller */,
+				847FA46B1C3641BE00095A6D /* View */,
 			);
 			path = News;
-			sourceTree = "<group>";
-		};
-		847533871C33CBC700FE5758 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				847533881C33CBC700FE5758 /* DCBaseController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		847533891C33CBC700FE5758 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				847FA46E1C36498000095A6D /* DCMyDataManager.swift */,
 				8475338C1C33DDDD00FE5758 /* DCTouTiao.swift */,
 				8475338E1C33E80100FE5758 /* DCDisplayPicInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8475338A1C33CBC700FE5758 /* View */ = {
+		847FA46B1C3641BE00095A6D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				847FA4701C36609F00095A6D /* Cell */,
+				847FA46C1C3641BE00095A6D /* DCBaseController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		847FA4701C36609F00095A6D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				847FA4711C3660E100095A6D /* DCBaseCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		848082D61C21309200EEC8E6 = {
@@ -132,6 +177,7 @@
 				848082FC1C21346900EEC8E6 /* Resources */,
 				848082FF1C21346F00EEC8E6 /* ThirdSDK */,
 				847533841C33CBB700FE5758 /* Utility */,
+				845FB8591C34214700BE837B /* Extension */,
 				848082EE1C21309200EEC8E6 /* Info.plist */,
 				848082E21C21309200EEC8E6 /* AppDelegate.swift */,
 			);
@@ -148,7 +194,9 @@
 		848082F91C21345300EEC8E6 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				848083011C2134E900EEC8E6 /* ScreenSettingswift.swift */,
+				848083011C2134E900EEC8E6 /* DCDeviceInfo.swift */,
+				84616EAC1C3686CC00CB38DD /* DCSetting.swift */,
+				845FB8571C341FD900BE837B /* DCUserInfo.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -156,6 +204,7 @@
 		848082FB1C21346300EEC8E6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				845FB8631C34359D00BE837B /* DCNetWorkTool.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -178,6 +227,7 @@
 		EBBF3BDBBB79E82EDA71001F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				845FB85C1C3434F400BE837B /* DCPicscrollView */,
 				53C333472C3C4C97B1C9AB3D /* Pods_NewsReader.framework */,
 			);
 			name = Frameworks;
@@ -305,10 +355,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8475338F1C33E80100FE5758 /* DCDisplayPicInfo.swift in Sources */,
-				8475338B1C33CBC700FE5758 /* DCBaseController.swift in Sources */,
-				848083021C2134E900EEC8E6 /* ScreenSettingswift.swift in Sources */,
+				847FA4721C3660E100095A6D /* DCBaseCell.swift in Sources */,
+				845FB8611C3434F400BE837B /* DCPicScrollView.m in Sources */,
+				847FA46F1C36498000095A6D /* DCMyDataManager.swift in Sources */,
+				84616EAD1C3686CC00CB38DD /* DCSetting.swift in Sources */,
+				84C67B051C3675D600957C90 /* UILabel+extension.swift in Sources */,
+				845FB8581C341FD900BE837B /* DCUserInfo.swift in Sources */,
+				847FA46D1C3641BE00095A6D /* DCBaseController.swift in Sources */,
+				845FB8621C3434F400BE837B /* DCWebImageManager.m in Sources */,
+				848083021C2134E900EEC8E6 /* DCDeviceInfo.swift in Sources */,
 				8475338D1C33DDDD00FE5758 /* DCTouTiao.swift in Sources */,
+				845FB85B1C34217800BE837B /* String+extension.swift in Sources */,
 				848082E31C21309200EEC8E6 /* AppDelegate.swift in Sources */,
+				845FB8641C34359D00BE837B /* DCNetWorkTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +464,10 @@
 				INFOPLIST_FILE = NewsReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.name.NewsReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/Desktop/作业/untitled folder/NewsReader/NewsReader/Utility/DCPicscrollView/Objective-CBridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -419,8 +480,10 @@
 				INFOPLIST_FILE = NewsReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.name.NewsReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/Desktop/作业/untitled folder/NewsReader/NewsReader/Utility/DCPicscrollView/Objective-CBridgingHeader.h";
 			};
 			name = Release;
 		};
@@ -470,8 +533,10 @@
 				INFOPLIST_FILE = NewsReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.name.NewsReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/Desktop/作业/untitled folder/NewsReader/NewsReader/Utility/DCPicscrollView/Objective-CBridgingHeader.h";
 			};
 			name = AppStore;
 		};
@@ -521,8 +586,10 @@
 				INFOPLIST_FILE = NewsReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.name.NewsReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/Desktop/作业/untitled folder/NewsReader/NewsReader/Utility/DCPicscrollView/Objective-CBridgingHeader.h";
 			};
 			name = AdHoc;
 		};

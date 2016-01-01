@@ -27,4 +27,9 @@ class DCDisplayPicInfo: NSObject {
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
 
+     override class func description() -> String {
+        return dictionaryWithValuesForKeys(["imgsrc","subtitle","tag","title","url"]).description
+    }
+
+    
 }

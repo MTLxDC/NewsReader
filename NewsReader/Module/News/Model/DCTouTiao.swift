@@ -62,6 +62,7 @@ class DCTouTiao: NSObject {
         setValuesForKeysWithDictionary(dict)
     }
     
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
+    override  func setValue(value: AnyObject?, forUndefinedKey key: String) {}
 
+    
 }
