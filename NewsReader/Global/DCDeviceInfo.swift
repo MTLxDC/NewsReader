@@ -16,7 +16,7 @@ let ScreenHeight    = UIScreen.mainScreen().bounds.height
 
 
 let isIOS8          = (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0
-let isIOS9          = (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0
+let isIOS9          = (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 9.0
 
 
 let isIphone4       = ScreenHeight == 480.0

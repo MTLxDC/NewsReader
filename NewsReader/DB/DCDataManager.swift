@@ -8,6 +8,8 @@
 
 import UIKit
 
-class DCDataManager: NSObject {
-
+class DCDataManager {
+    
+    
 }
+

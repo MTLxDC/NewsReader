@@ -12,24 +12,44 @@ import UIKit
 //"tag": "photoset",
 //"title": "重庆在建车站20米塔吊断裂砸断道路",
 //"url": "54GI0096|85578"
-class DCDisplayPicInfo: NSObject {
+class DCDisplayPicInfo: NSObject,NSCoding {
     
     var imgsrc:String?
-    var subtitle:String?
     var tag:String?
     var title:String?
     var url:String?
     
+    
+    override init() {
+        super.init()
+    }
+    
     init(dict:[String:AnyObject]) {
         super.init()
-        setValuesForKeysWithDictionary(dict)
+        
+        imgsrc = dict["imgsrc"] as? String
+        tag = dict["tag"] as? String
+        title = dict["title"] as? String
+        url = dict["url"] as? String
     }
     
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
-
-     override class func description() -> String {
-        return dictionaryWithValuesForKeys(["imgsrc","subtitle","tag","title","url"]).description
-    }
 
     
+    func encodeWithCoder(aCoder: NSCoder) {
+        
+        aCoder.encodeObject(tag, forKey: "tag")
+        aCoder.encodeObject(imgsrc, forKey: "imgsrc")
+        aCoder.encodeObject(title, forKey: "title")
+        aCoder.encodeObject(url, forKey: "url")
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+    
+        imgsrc = aDecoder.decodeObjectForKey("imgsrc") as? String
+        title  = aDecoder.decodeObjectForKey("title") as? String
+        tag    = aDecoder.decodeObjectForKey("imgsrc") as? String
+        url    = aDecoder.decodeObjectForKey("title") as? String
+        
+    }
 }

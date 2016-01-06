@@ -10,6 +10,7 @@
 
 #import "DCPicScrollView.h"
 #import "DCWebImageManager.h"
+#import <sqlite3.h>
 
 
 #endif /* Objective_CBridgingHeader_h */

@@ -10,16 +10,13 @@ import UIKit
 import SnapKit
 
 class DCBaseCell: UITableViewCell {
-
-    private let cellMargin:CGFloat = 8
-    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style, reuseIdentifier: reuseIdentifier)
         setUpUI()
     }
 
-    var touTiao:DCTouTiao?
+   internal var touTiao:DCTouTiao?
     {
         didSet {
             upDataUI()
@@ -57,64 +54,37 @@ class DCBaseCell: UITableViewCell {
         }
         
         if md.imgsrc != nil {
-            iconView.setImageWithURL(NSURL(string:md.imgsrc!)!)
+            iconView.sd_setImageWithURL(NSURL(string: (touTiao?.imgsrc)!), placeholderImage: placeImage)
         }
-        titleLable.text = md.title
-        digestLable.text = md.digest
         
-        replyCountLable.text = String(format: "%d跟贴", md.replyCount ?? 0)
+            titleLable.text = md.title
+            digestLable.text = md.digest
+      
+        if md.replyCount?.integerValue > 9999 {
+            replyCountLable.text = String(format: "%.1f万跟贴", (md.replyCount?.floatValue)! * 0.0001)
+        }else {
+            replyCountLable.text = String(format: "%zd跟贴", md.replyCount?.integerValue ?? 0)
+        }
         
     }
     
+
     
-    
-  private  let bottomView = UIView()
-  private  let iconView = UIImageView()
+  internal  let iconView = UIImageView()
   
-  private  let titleLable =
+  internal  let titleLable =
     UILabel(text: nil, font: UIFont.systemFontOfSize(12), textColor:UIColor.blackColor(), Alignment: .Left)
-  private  let digestLable =
+  internal  let digestLable =
     UILabel(text: nil, font: UIFont.systemFontOfSize(10), textColor: UIColor(white: 0.6, alpha: 1), Alignment: .Left)
-  private  let replyCountLable =
-    UILabel(text: nil, font: UIFont.systemFontOfSize(8), textColor: UIColor(white: 0.6, alpha: 1), Alignment:.Right)
+  internal  let replyCountLable =
+    UILabel(text: nil, font: UIFont.systemFontOfSize(8), textColor: UIColor(white: 0.5, alpha: 1), Alignment:.Right)
     
-    private func setUpUI() {
+    internal func setUpUI() {
         
-//        iconView.contentMode = UIViewContentMode.ScaleAspectFill
-      
         contentView.addSubview(iconView)
         contentView.addSubview(titleLable)
         contentView.addSubview(digestLable)
         contentView.addSubview(replyCountLable)
-        
-        contentView.snp_makeConstraints { (make) -> Void in
-            make.left.top.right.equalTo(self)
-            make.bottom.equalTo(iconView).offset(cellMargin)
-        }
-        
-        iconView.snp_makeConstraints { (make) -> Void in
-            make.left.top.equalTo(cellMargin)
-            make.width.equalTo(80)
-            make.height.equalTo(50)
-        }
-        
-        titleLable.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(iconView.snp_right).offset(cellMargin)
-            make.right.equalTo(-cellMargin*0.5)
-            make.top.equalTo(cellMargin)
-        }
-        
-        digestLable.snp_makeConstraints { (make) -> Void in
-            make.left.right.equalTo(titleLable)
-            make.top.equalTo(titleLable.snp_bottom)
-            make.bottom.equalTo(iconView)
-        }
-        
-        replyCountLable.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(titleLable)
-            make.bottom.equalTo(iconView)
-        }
-        
         
     }
     

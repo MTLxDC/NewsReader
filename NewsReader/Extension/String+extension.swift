@@ -10,6 +10,12 @@ import UIKit
 
 public extension String {
     
+    
+    public func path(Directory:NSSearchPathDirectory)->String {
+       return NSSearchPathForDirectoriesInDomains(Directory, NSSearchPathDomainMask.UserDomainMask,true).first! + "/\(self)"
+    }
+    
+    
    public func parseURLQueryString() ->[String:AnyObject]{
         
         var dict = [String:AnyObject]()
@@ -31,5 +37,7 @@ public extension String {
         
         return dict
     }
+    
+  
     
 }

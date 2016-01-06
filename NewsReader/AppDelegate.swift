@@ -19,13 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: ScreenBounds)
         
-        self.window?.rootViewController = DCBaseController()
+        self.window?.rootViewController = DCMainViewController()
         
         self.window?.makeKeyAndVisible()
         
         
         return true
     }
+
+    func applicationDidBecomeActive(application: UIApplication) {
+        DCTouTiaoViewModel.shareModel.getModelCache()
+    }
+    
+    func applicationWillTerminate(application: UIApplication) {
+        DCTouTiaoViewModel.shareModel.saveModelCache()
+    }
+    
 
 
 }

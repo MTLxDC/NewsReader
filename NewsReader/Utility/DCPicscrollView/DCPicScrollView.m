@@ -187,8 +187,9 @@
 - (UIView *)creatLabelBgView {
 
     
-   UIToolbar *v = [[UIToolbar alloc] initWithFrame:CGRectMake(0, myHeight-pageSize, myWidth, pageSize)];
-
+   UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, myHeight-pageSize, myWidth, pageSize)];
+    v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, myWidth-_PageControl.frame.size.width,pageSize)];
     label.textAlignment = NSTextAlignmentLeft;
     label.backgroundColor = [UIColor clearColor];
