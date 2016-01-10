@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - MJRefresh (3.0.8)
+  - MMMaterialDesignSpinner (0.2.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -23,7 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - MJRefresh
+  - MMMaterialDesignSpinner
   - SDWebImage
   - SnapKit
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -39,7 +39,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
+  MMMaterialDesignSpinner: 8f1a50270b789c76ec500957e518fc3e05e55b9d
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SnapKit: e1f090a6d47b1dd4bd89b73f72b6746a7835ef3c
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MJRefresh.xcscheme</key>
+		<key>MMMaterialDesignSpinner-MaterialDesignSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MMMaterialDesignSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,27 +42,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0809407CAA21503DA62E6B40091CBD7E</key>
+		<key>15C68DF46424FCA01485C80D1744DBD5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C54D4BF1657D75951D5612C5656FD90</key>
+		<key>2A22D687283B22BE7836B1633623E7F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8572A9A9269281CE60A3E8A3FE23380</key>
+		<key>341895DE16C94C2F5FAEA37E6EB85F1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6CDC3AA23662CF55B8A1DB079AFFEF5</key>
+		<key>673CA1A31B9623DF611BAC94DC6CC0B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C76E996BFBDAF29DE5BF744636C7E0E6</key>
+		<key>8043A0FF454CF26E77D29186D908E5C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B18AE422AC47A9F09E371C20C8BD9AE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

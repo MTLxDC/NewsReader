@@ -7,7 +7,7 @@ target 'NewsReader' do
    pod ‘AFNetworking’
    pod ‘SDWebImage’
    pod ’SnapKit’
-   pod ‘MJRefresh’
+   pod 'MMMaterialDesignSpinner'
    
 end
 

@@ -11,6 +11,12 @@ import UIKit
 public extension String {
     
     
+    var floatValue:Float {
+        get {
+            return NSString(string: self).floatValue
+        }
+    }
+    
     public func path(Directory:NSSearchPathDirectory)->String {
        return NSSearchPathForDirectoriesInDomains(Directory, NSSearchPathDomainMask.UserDomainMask,true).first! + "/\(self)"
     }
@@ -37,6 +43,8 @@ public extension String {
         
         return dict
     }
+    
+    
     
   
     

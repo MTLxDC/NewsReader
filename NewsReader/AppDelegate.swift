@@ -19,22 +19,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: ScreenBounds)
         
-        self.window?.rootViewController = DCMainViewController()
+        let nav = UINavigationController(rootViewController: DCMainViewController())
+        
+        self.window?.rootViewController = nav
         
         self.window?.makeKeyAndVisible()
         
         
         return true
     }
+//
+//    func applicationDidBecomeActive(application: UIApplication) {
+//        DCTouTiaoViewModel.shareModel.getModelCache()
+//        DCNewDetailViewModel.shareModel.getModelCache()
+//    }
+//    
+//    func applicationDidEnterBackground(application: UIApplication) {
+//        DCTouTiaoViewModel.shareModel.saveModelCache()
+//        DCNewDetailViewModel.shareModel.saveModelCache()
+//    }
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        DCTouTiaoViewModel.shareModel.getModelCache()
-    }
-    
-    func applicationWillTerminate(application: UIApplication) {
-        DCTouTiaoViewModel.shareModel.saveModelCache()
-    }
-    
 
 
 }

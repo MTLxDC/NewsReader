@@ -13,11 +13,15 @@
 #import "DCPicScrollView.h"
 #import "DCWebImageManager.h"
 
+
 @interface DCPicScrollView () <UIScrollViewDelegate>
 
-@property (nonatomic,copy) NSArray *imageData;
+@property (nonatomic,strong) NSMutableDictionary *imageData;
+
+@property (nonatomic,strong) NSArray *imageUrlStrings;
 
 @end
+
 
 @implementation DCPicScrollView{
 
@@ -64,18 +68,50 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame WithImageNames:(NSArray<NSString *> *)ImageName {
-    if (ImageName.count < 2) {
+    if (ImageName.count < 1) {
         return nil;
     }
+    
     self = [super initWithFrame:frame];
+
+    if(ImageName.count == 1) {
+        
+        UIImageView *img = [[UIImageView alloc] initWithFrame:self.bounds];
+        [self addSubview:img];
+        _centerImageView = img;
+        
+        UIView *titleView = [self creatLabelBgView];
+        
+        _titleLabel = (UILabel *)titleView.subviews.firstObject;
+        
+        [self addSubview:titleView];
+        _isNetwork = [ImageName.firstObject hasPrefix:@"http://"];
+        
+        if (_isNetwork) {
+            DCWebImageManager *manager = [DCWebImageManager shareManager];
+            
+            [manager downloadImageWithUrlString:ImageName.firstObject];
+            
+            [manager setDownLoadImageComplish:^(UIImage *image, NSString *url) {
+                img.image = image;
+            }];
+            
+        }else {
+            img.image = [UIImage imageNamed:ImageName.firstObject];
+        }
+        
+        
+        
+        
+        return self;
+    }
     
     [self prepareScrollView];
-    [self setImageData:ImageName];
-    [self setMaxImageCount:_imageData.count];
+    [self setImageUrlStrings:ImageName];
+    [self setMaxImageCount:self.imageUrlStrings.count];
 
     return self;
 }
-
 
 
 - (void)prepareScrollView {
@@ -150,7 +186,12 @@
 
 
 - (void)setTitleData:(NSArray<NSString *> *)titleData {
-    if (titleData.count < 2)  return;
+    if (titleData.count < 1)  return;
+    
+    if (titleData.count == 1) {
+        _titleLabel.text = titleData.firstObject;
+        return;
+    }
     
     if (titleData.count < _imageData.count) {
         NSMutableArray *temp = [NSMutableArray arrayWithArray:titleData];
@@ -190,10 +231,10 @@
    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, myHeight-pageSize, myWidth, pageSize)];
     v.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, myWidth-_PageControl.frame.size.width,pageSize)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(8,0, myWidth-_PageControl.frame.size.width-16,pageSize)];
     label.textAlignment = NSTextAlignmentLeft;
     label.backgroundColor = [UIColor clearColor];
-    label.textColor = [[UIColor alloc] initWithWhite:0.5 alpha:1];
+    label.textColor = [UIColor whiteColor];
     label.font = [UIFont systemFontOfSize:pageSize*0.5];
     
     [v addSubview:label];
@@ -268,19 +309,11 @@
 
 - (void)changeImageLeft:(NSInteger)LeftIndex center:(NSInteger)centerIndex right:(NSInteger)rightIndex {
     
-    if (_isNetwork) {
-        
+
         _leftImageView.image = [self setImageWithIndex:LeftIndex];
         _centerImageView.image = [self setImageWithIndex:centerIndex];
         _rightImageView.image = [self setImageWithIndex:rightIndex];
         
-    }else {
-        
-        _leftImageView.image = _imageData[LeftIndex];
-        _centerImageView.image = _imageData[centerIndex];
-        _rightImageView.image = _imageData[rightIndex];
-        
-    }
     
     if (_hasTitle) {
         _titleLabel.text = [self.titleData objectAtIndex:centerIndex];
@@ -290,14 +323,24 @@
 }
 
 -(void)setPlaceImage:(UIImage *)placeImage {
+    if (!_isNetwork) return;
+    
     _placeImage = placeImage;
-    [self changeImageLeft:_MaxImageCount-1 center:0 right:1];
+    if (_MaxImageCount < 2 && _centerImageView) {
+        _centerImageView.image = _placeImage;
+    }else {
+        [self changeImageLeft:_MaxImageCount-1 center:0 right:1];
+    }
 }
 
+
+
 - (UIImage *)setImageWithIndex:(NSInteger)index {
-    
+    if (index < 0||index >= self.imageUrlStrings.count) {
+        return _placeImage;
+    }
     //从内存缓存中取,如果没有使用占位图片
-    UIImage *image = [[[DCWebImageManager shareManager] webImageCache] valueForKey:_imageData[index]];
+    UIImage *image = [self.imageData objectForKey:self.imageUrlStrings[index]];
     
     return image ? image : _placeImage;
 }
@@ -326,37 +369,37 @@
     _timer = nil;
 }
 
-- (void)setImageData:(NSArray *)ImageNames {
+- (void)setImageUrlStrings:(NSArray *)imageUrlStrings {
+    _imageUrlStrings = imageUrlStrings;
+    _imageData = [NSMutableDictionary dictionaryWithCapacity:_imageUrlStrings.count];
     
-    _isNetwork = [ImageNames.firstObject hasPrefix:@"http://"];
-    
+    _isNetwork = [imageUrlStrings.firstObject hasPrefix:@"http://"];
+
     if (_isNetwork) {
+    
+        DCWebImageManager *manager = [DCWebImageManager shareManager];
         
-        _imageData = ImageNames;
+        [manager setDownLoadImageComplish:^(UIImage *image, NSString *url) {
+            [self.imageData setObject:image forKey:url];
+            [self changeImageLeft:_currentIndex-1 center:_currentIndex right:_currentIndex+1];
+        }];
         
-        [self getImage];
+        for (NSString *urlSting in imageUrlStrings) {
+            [manager downloadImageWithUrlString:urlSting];
+        }
         
     }else {
         
-        NSMutableArray *temp = [NSMutableArray arrayWithCapacity:ImageNames.count];
-        
-        for (NSString *name in ImageNames) {
-            [temp addObject:[UIImage imageNamed:name]];
+        for (NSString *name in imageUrlStrings) {
+            [self.imageData setObject:[UIImage imageNamed:name] forKey:name];
         }
         
-        _imageData = temp;
+        
     }
-    
+
 }
 
 
-- (void)getImage {
-    
-    for (NSString *urlSting in _imageData) {
-        [[DCWebImageManager shareManager] downloadImageWithUrlString:urlSting];
-    }
-    
-}
 
 -(void)dealloc {
     [self removeTimer];

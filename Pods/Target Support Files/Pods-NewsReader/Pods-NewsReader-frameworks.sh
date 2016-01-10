@@ -85,28 +85,28 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-NewsReader/AFNetworking.framework"
-  install_framework "Pods-NewsReader/MJRefresh.framework"
+  install_framework "Pods-NewsReader/MMMaterialDesignSpinner.framework"
   install_framework "Pods-NewsReader/SDWebImage.framework"
   install_framework "Pods-NewsReader/SnapKit.framework"
   install_framework "Pods-NewsReader/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-NewsReader/AFNetworking.framework"
-  install_framework "Pods-NewsReader/MJRefresh.framework"
+  install_framework "Pods-NewsReader/MMMaterialDesignSpinner.framework"
   install_framework "Pods-NewsReader/SDWebImage.framework"
   install_framework "Pods-NewsReader/SnapKit.framework"
   install_framework "Pods-NewsReader/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "AdHoc" ]]; then
   install_framework "Pods-NewsReader/AFNetworking.framework"
-  install_framework "Pods-NewsReader/MJRefresh.framework"
+  install_framework "Pods-NewsReader/MMMaterialDesignSpinner.framework"
   install_framework "Pods-NewsReader/SDWebImage.framework"
   install_framework "Pods-NewsReader/SnapKit.framework"
   install_framework "Pods-NewsReader/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "AppStore" ]]; then
   install_framework "Pods-NewsReader/AFNetworking.framework"
-  install_framework "Pods-NewsReader/MJRefresh.framework"
+  install_framework "Pods-NewsReader/MMMaterialDesignSpinner.framework"
   install_framework "Pods-NewsReader/SDWebImage.framework"
   install_framework "Pods-NewsReader/SnapKit.framework"
   install_framework "Pods-NewsReader/SwiftyJSON.framework"

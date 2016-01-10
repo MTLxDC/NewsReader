@@ -18,9 +18,15 @@ public class DCNetWorkTool:AFHTTPSessionManager  {
     
     static let shareTool = DCNetWorkTool()
     
-   public func insertContentType(type:String){
-        DCNetWorkTool.shareTool.responseSerializer.acceptableContentTypes?.insert(type)
+    init () {
+        super.init(baseURL: nil, sessionConfiguration: nil)
+        self.responseSerializer.acceptableContentTypes?.insert("text/html")
     }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
  public func httpRequest(method:requestMethod,URLString: String, parameters: AnyObject?,success:((res:AnyObject?) -> Void)?,failure: ((error:NSError) -> Void)?) {
         
@@ -34,9 +40,9 @@ public class DCNetWorkTool:AFHTTPSessionManager  {
                 
                 }) { (_, error:NSError) -> Void in
                     
-                    if failure != nil {
-                        failure!(error: error)
-                    }
+                if failure != nil {
+                    failure!(error: error)
+                }
             }
             
         }else if method == requestMethod.POST {
@@ -49,9 +55,9 @@ public class DCNetWorkTool:AFHTTPSessionManager  {
                 
                 }) { (_, error:NSError) -> Void in
                     
-                    if failure != nil {
-                        failure!(error: error)
-                    }
+                if failure != nil {
+                    failure!(error: error)
+                }
             }
             
         }
